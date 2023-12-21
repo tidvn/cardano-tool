@@ -5,10 +5,11 @@ import { AppProps } from "next/app"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
+import { cn } from "@/utils/cn"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Wallet } from "@/context/connectWalletContext"
 
 export const metadata: Metadata = {
   title: {
@@ -38,15 +39,17 @@ export default function App({ Component, pageProps }: AppProps) {
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-            <div className="container flex-1 ">
-              <Component  {...pageProps} />
+        <Wallet>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+              <div className="container flex-1 ">
+                <Component  {...pageProps} />
+              </div>
             </div>
-          </div>
-          <TailwindIndicator />
-        </ThemeProvider>
+            <TailwindIndicator />
+          </ThemeProvider>
+        </Wallet>
       </div>
       {/* </html> */}
     </>

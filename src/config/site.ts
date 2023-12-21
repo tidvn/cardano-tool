@@ -1,22 +1,22 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Solana Tool",
+  name: "Cardano Tool",
   description:
-    "Solana Tool",
+    "Cardano Tool",
   mainNav: [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "dashboard",
-      href: "/dashboard",
-    },
+    // {
+    //   title: "Home",
+    //   href: "/",
+    // },
+    // {
+    //   title: "dashboard",
+    //   href: "/dashboard",
+    // },
   ],
   links: {
     twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/tidvn/solana-tool",
+    github: "https://github.com/tidvn/cardano-tool",
     docs: "https://ui.shadcn.com",
   },
 }
